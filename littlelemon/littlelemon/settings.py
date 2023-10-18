@@ -116,7 +116,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'restaurant/static/img/'
+
+
+STATICFILES_DIRS = [
+        'restaurant/static',
+]
 
 STATICFILES_DIRS = [
     "restaurant/static",
