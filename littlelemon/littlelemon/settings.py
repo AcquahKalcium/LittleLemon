@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'restaurant',
     'rest_framework',
+    'djoser',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -77,15 +79,15 @@ WSGI_APPLICATION = 'littlelemon.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'reservations',
-        'HOST' : '127.0.0.1',
-        'PORT' : '3306',
-        'USER' : 'rooting',
-        'PASSWORD' : 'rooting@123',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydb',
+        'HOST' : 'localhost',
+        'PORT' : '5432',
+        'USER' : 'postgres',
+        'PASSWORD' : '0543050227',
+        # 'OPTIONS': {
+        #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        # }
     }
 }
 
@@ -141,3 +143,15 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
+
+#djoser Authentication library config
+DJOSER={"USER_ID_FIELD":"username"}

@@ -27,5 +27,8 @@ urlpatterns = [
     path('', include('restaurant.urls')),
     #router urls
     path('booking/', include(router.urls)),
+    #djoser library for Authentication & Authorization
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')) 
 ]
 
