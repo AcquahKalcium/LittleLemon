@@ -7,7 +7,5 @@ urlpatterns = [
     # path('', views.index, name='index'),
     path('menu/', views.MenuItemsView.as_view()),
     path('menu/<int:pk>', views.SingleMenuItemView.as_view()),
-    # path('message/', views.msg),
-    #add following line in urlpatterns list
     path('api-token-auth/', obtain_auth_token)
 ]
